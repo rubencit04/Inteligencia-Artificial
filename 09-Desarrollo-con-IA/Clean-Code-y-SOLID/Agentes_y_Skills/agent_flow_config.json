@@ -1,0 +1,26 @@
+{
+  "flow_name": "CleanCode_Validation_Flow",
+  "mcp_server": {
+    "enabled": true,
+    "type": "mcp-server-sqlite",
+    "db_path": "./metrics.db"
+  },
+  "agents": [
+    {
+      "name": "DeveloperAgent",
+      "role": "Software Engineer",
+      "task": "Escribir código inicial basado en requerimientos."
+    },
+    {
+      "name": "CleanCodeReviewerAgent",
+      "role": "Code Reviewer",
+      "skills": ["clean_code_skill_modificada.md"],
+      "task": "Refactorizar código del DeveloperAgent."
+    },
+    {
+      "name": "MetricsCollectorAgent",
+      "role": "Data Analyst",
+      "task": "Extraer el JSON de principios aplicados y enviarlos al MCP Server."
+    }
+  ]
+}

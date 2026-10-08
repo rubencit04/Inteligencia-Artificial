@@ -1,0 +1,19 @@
+research:
+  description: >
+    1. Realiza un estudio profundo de los últimos avances en Ciberseguridad en los años 2024 y 2025
+    2. Identifica nuevas tecnologías, tendencias clave, ataques más realizados y su impacto en las víctimas
+  expected_output: >
+    Informe completo destacando los puntos claves
+  agent: researcher
+
+write:
+  description: >
+    Empleando la información proporcionada desarrolla una publicación 
+    destacable sobre avances de Ciberseguridad.
+    Tu publicación debe ser rigurosa e informativa pero accesible para todo el público
+    con un conocimiento tecnológico.
+    Haz que suene interesante para que despierte curiosidad.
+    Evita palabaras complejas o estructuras repetitivas para que no suene a IA
+  expected_output: >
+    Una publicación de calidad, de al menos 200 palabras
+  agent: writer

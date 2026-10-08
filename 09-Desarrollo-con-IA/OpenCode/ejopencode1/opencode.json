@@ -1,0 +1,55 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+     "githubconkey": {
+      "type": "remote",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "enabled": true,
+      "headers": {
+        "Authorization": "Bearer Vuestra_API_KEY"
+      }
+    },
+      "saludoserver": {
+        "type": "local",
+        "command": ["cmd", "/c", "C:/Users/User00/Desarrollo/g2/mcpcode/.venv/Scripts/activate && uv run C:/Users/User00/Desarrollo/g2/mcpcode/miserver.py"]
+      }
+  },
+    "provider": {
+    "ollama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Ollama Local",
+      "options": {
+        "baseURL": "http://localhost:11434/v1"
+      },
+      "models": {
+        "llama3.2:1b": {
+          "name": "llama3.2:1b"
+        }
+      }
+    }
+  },
+  "agent": { 
+    "code-developer": {
+      "description": "Code developer",
+      "mode": "subagent",
+      "model": "opencode/big-pickle",
+      "prompt": "Code developer. Implement code if you have any questions, ask the @manager agent",
+      "tools": {
+        "write": true,
+        "edit": true,
+        "bash": true
+      }
+    },
+    "rookie": {
+      "description": "Rookie worker",
+      "mode": "primary",
+      "model": "ollama/llama3.2:1b",
+      "prompt": "Rookie. Answer very basic questions",
+      "tools": {
+        "write": false,
+        "edit": false,
+        "bash": false
+      }
+    }
+  }
+}

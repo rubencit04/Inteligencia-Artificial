@@ -1,0 +1,15 @@
+# Secretos
+.env
+.env.*
+!.env.example
+
+# Entornos y dependencias
+venv/
+.venv/
+node_modules/
+__pycache__/
+.ipynb_checkpoints/
+
+# Datos generados
+chroma_db/
+*.log

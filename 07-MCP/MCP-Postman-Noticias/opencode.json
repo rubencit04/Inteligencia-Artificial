@@ -1,0 +1,17 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "servidor-noticias": {
+      "type": "local",
+      "command": [
+        "node",
+        "C:/Users/tteru/OneDrive/Escritorio/Nebrija/Ruben Progamacion IA/MCP/practica-mcp/index.js"
+      ],
+      "enabled": true,
+      "environment": {
+        "POSTMAN_MOCK_URL": "https://4fcdf177-c615-45ef-98bc-ff2ea7aa75c5.mock.pstmn.io",
+        "API_TOKEN": "mi-token-super-secreto"
+      }
+    }
+  }
+}

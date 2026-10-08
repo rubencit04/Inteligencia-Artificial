@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explorador de datos espaciales con información en tiempo real de NASA: imágenes APOD, asteroides cercanos, clima espacial (solar flares) y eventos naturales de la Tierra.">
+    <meta name="keywords" content="NASA, APOD, asteroides, clima espacial, DONKI, EONET, exploración espacial, imágenes del espacio">
+    <meta name="author" content="Equipo de Desarrollo">
+    <meta name="theme-color" content="#0066cc">
+    <meta property="og:title" content="🪐 NASA NeoWs Explorer">
+    <meta property="og:description" content="Explorador de datos espaciales con APIs de NASA en tiempo real">
+    <meta property="og:type" content="website">
+    <title>NASA NeoWs Explorer - v2</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪐</text></svg>">
+</head>
+<body>
+    <header id="app-header">
+        <div class="header-container">
+            <h1 class="site-title">🪐 NASA NeoWs Explorer</h1>
+            <nav class="main-nav">
+                <button data-view="apod" class="nav-btn active" aria-label="Ver Astronomía del Día (APOD)">Inicio (APOD)</button>
+                <button data-view="asteroids" class="nav-btn" aria-label="Rastreador de asteroides cercanos">Asteroides</button>
+                <button data-view="donki" class="nav-btn" aria-label="Ver clima espacial y solar flares">Clima Espacial</button>
+                <button data-view="eonet" class="nav-btn" aria-label="Ver eventos naturales de la Tierra">Eventos Naturales</button>
+            </nav>
+            <button id="theme-toggle" class="btn-theme" aria-label="Cambiar entre tema oscuro y claro">
+                <span class="theme-icon">☀️</span>
+            </button>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- El contenido cambiará dinámicamente aquí -->
+        <div id="app-content"></div>
+    </main>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

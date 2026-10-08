@@ -1,0 +1,50 @@
+// Trabajamos mandando parámetros al modelo.
+// Le mandaremos como parámetro un país y obtenemos la info correspondiente
+import 'dotenv/config';
+import OpenAI from 'openai';
+
+/*
+Argumentos al ejecutar programa con node (process.argv)
+[0] Ruta de node
+[1] nombre completo del archivo
+[2] Primer argumento o parámetro
+[3] Segundo argumento o parámetro
+.....
+.....
+*/
+
+const client = new OpenAI({
+    apikey: process.env.OPENAI_API_KEY
+});
+
+const pais = process.argv[2];
+
+if (!pais){
+    console.error("Por favor, indica un pais. Ej: node paises.js Italia");
+    process.exit(1);
+}
+
+async function infoPais(pais){
+    try {
+      const response = await client.responses.create({
+        model: "gpt-5-nano",
+        input: [
+            {
+                content: "Eres un asistente que da datos sobre países del mundo. Quiero saber la población, el continente, la capital y una descripción de 100 caracteres aproximadamente",
+                role: "developer",
+            },
+            {
+                content: `Dame información sobre el pais ${pais}`,
+                role: "user",
+            },
+        ],
+      });
+      console.log("$$$$$$$$$$ DATOS: $$$$$$$$$$$$");
+      console.log(response.output_text);
+
+    } catch (err){
+        console.error(err);
+    }
+}
+
+infoPais(pais)

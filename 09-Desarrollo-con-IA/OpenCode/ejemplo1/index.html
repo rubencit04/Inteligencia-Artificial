@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory - Juego de Cartas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <div class="game-container">
+        <header>
+            <div class="logo">
+                <span class="logo-icon">🧠</span>
+                <h1>Memory</h1>
+            </div>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-icon">🎯</div>
+                    <div class="stat-content">
+                        <span class="label">Movimientos</span>
+                        <span id="moves">0</span>
+                    </div>
+                </div>
+                <div class="stat">
+                    <div class="stat-icon">⏱️</div>
+                    <div class="stat-content">
+                        <span class="label">Tiempo</span>
+                        <span id="time">00:00</span>
+                    </div>
+                </div>
+                <div class="stat">
+                    <div class="stat-icon">⭐</div>
+                    <div class="stat-content">
+                        <span class="label">Mejor</span>
+                        <span id="best">--</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="controls">
+            <div class="difficulty-selector">
+                <span class="selector-label">Nivel:</span>
+                <div class="difficulty">
+                    <button class="btn active" data-level="easy">
+                        <span class="btn-icon">🌱</span>
+                        <span class="btn-text">Fácil</span>
+                        <span class="btn-sub">(6)</span>
+                    </button>
+                    <button class="btn" data-level="medium">
+                        <span class="btn-icon">🔥</span>
+                        <span class="btn-text">Medio</span>
+                        <span class="btn-sub">(8)</span>
+                    </button>
+                    <button class="btn" data-level="hard">
+                        <span class="btn-icon">⚡</span>
+                        <span class="btn-text">Difícil</span>
+                        <span class="btn-sub">(10)</span>
+                    </button>
+                </div>
+            </div>
+            <div class="category-selector">
+                <span class="selector-label">Tema:</span>
+                <div class="category">
+                    <button class="btn-cat active" data-category="animals">🐾 Animales</button>
+                    <button class="btn-cat" data-category="food">🍕 Comida</button>
+                    <button class="btn-cat" data-category="sports">⚽ Deportes</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-info">
+            <div class="pairs-counter">
+                <span>Parejas:</span>
+                <span id="pairs-found">0</span>
+                <span>/</span>
+                <span id="pairs-total">6</span>
+            </div>
+            <button class="restart-btn" id="restart">
+                <span>🔄</span> Reiniciar
+            </button>
+        </div>
+
+        <div class="board" id="board"></div>
+    </div>
+
+    <div class="victory" id="victory">
+        <div class="victory-content">
+            <div class="victory-icon">🎉</div>
+            <h2>¡Victoria!</h2>
+            <p class="victory-subtitle">Has completado el nivel <span id="victory-level">Fácil</span></p>
+            <div class="victory-stats">
+                <div class="victory-stat">
+                    <span class="vs-icon">🎯</span>
+                    <span class="vs-value" id="final-moves">0</span>
+                    <span class="vs-label">movimientos</span>
+                </div>
+                <div class="victory-stat">
+                    <span class="vs-icon">⏱️</span>
+                    <span class="vs-value" id="final-time">00:00</span>
+                    <span class="vs-label">tiempo</span>
+                </div>
+            </div>
+            <div class="new-best" id="new-best" style="display: none;">
+                <span>🏆 ¡Nueva mejor puntuación!</span>
+            </div>
+            <button class="play-again-btn" id="play-again">
+                Jugar de nuevo
+            </button>
+            <button class="next-level-btn" id="next-level">
+                Siguiente nivel →
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

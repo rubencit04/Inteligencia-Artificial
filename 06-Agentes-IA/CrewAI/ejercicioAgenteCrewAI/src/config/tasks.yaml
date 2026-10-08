@@ -1,0 +1,26 @@
+busqueda_datos:
+  description: >
+    Investiga a fondo sobre el tema: {tema}.
+    No busques lo obvio. Encuentra 3 curiosidades o "Plot Twists" reales sobre este tema.
+    Verifica que la información sea correcta.
+  expected_output: >
+    Un documento de texto con 3 puntos clave detallados y sus fuentes.
+  agent: documentalista
+
+redaccion_guion:
+  description: >
+    Utilizando las curiosidades encontradas, escribe un guion para un episodio de podcast 
+    de 2 minutos sobre {tema}.
+    Debe tener:
+    - Un "Gancho" inicial (Hook).
+    - Desarrollo de las curiosidades.
+    - Cierre inspirador.
+    
+    IMPORTANTE: Usa la herramienta 'Contador de Palabras' para asegurarte de que el 
+    guion tenga entre 250 y 350 palabras (ni más, ni menos). Si es muy corto, extiéndelo.
+    
+    ADEMÁS: Usa la herramienta 'Analisis de Sentimiento' para verificar que el cierre sea realmente inspirador.
+  expected_output: >
+    Un guion listo para ser locutado, con indicaciones de [MÚSICA] y [EFECTOS], 
+    que cumpla con la longitud requerida.
+  agent: guionista
